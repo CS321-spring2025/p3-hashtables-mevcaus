@@ -71,7 +71,6 @@ public class HashObject {
      * @return A string
      */
     public String toString() {
-        // not sure what format to use yet.
-        return "";
+        return key + ": " + frequency + " " + probeCount;
     }
 }
