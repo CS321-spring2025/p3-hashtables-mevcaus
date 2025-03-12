@@ -105,4 +105,20 @@ public abstract class Hashtable {
         if (quotient < 0) quotient += divisor;
         return quotient;
     }
+
+    /**
+     * Gets the number of duplicates encountered count
+     * @return The numDuplicates count
+     */
+    public int getNumDuplicates() {
+        return numDuplicates;
+    }
+
+    /**
+     * Gets the number of probes needed to hash count
+     * @return The numProbes count
+     */
+    public int getNumProbes() {
+        return numProbes;
+    }
 }
