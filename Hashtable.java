@@ -92,6 +92,12 @@ public abstract class Hashtable {
         return null;
     }
 
+    /**
+     * changes any negative modular value to positive
+     * @param dividend The integer to be divided
+     * @param divisor The integer to divide by
+     * @return The positive remainder.
+     */
     protected int positiveMod(int dividend, int divisor) {
         int quotient = dividend % divisor;
         if (quotient < 0) quotient += divisor;
