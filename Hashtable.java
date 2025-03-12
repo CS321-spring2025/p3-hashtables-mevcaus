@@ -79,9 +79,11 @@ public abstract class Hashtable {
 
         while (probe < capacity) {
             int index = h(key, probe);
-
+            probe++;
             if (table[index] == null) {
                 return null;
+            } else if (!table[index].getKey().equals(key)) {
+                index = h(key, probe + 1);
             } else if (table[index].getKey().equals(key) && !table[index].isDeleted()) {
                 return table[index];
             }
