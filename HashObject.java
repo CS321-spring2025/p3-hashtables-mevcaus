@@ -8,6 +8,7 @@ public class HashObject {
     private Object key;
     private int frequency;
     private int probeCount;
+    private boolean isDeleted;
 
     /**
      * Constructs a new HashObject with the given key.
@@ -17,6 +18,7 @@ public class HashObject {
         this.key = key;
         this.frequency = 0;
         this.probeCount = 0;
+        this.isDeleted = false;
     }
 
     /**
@@ -51,19 +53,35 @@ public class HashObject {
     }
 
     /**
-     * Increments the probe count
+     * sets probe count
+     * @param probeCount probe count to set to
      */
-    public void incrementProbeCount() {
-        probeCount++;
+    public void setProbeCount(int probeCount) {
+        this.probeCount = probeCount;
+    }
+
+    /**
+     * sets the deleted boolean to true
+     */
+    public void delete() {
+        isDeleted = true;
+    }
+
+    /**
+     * gets the deleted state
+     * @return a boolean representing if the hash object was deleted
+     */
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
     /**
      * Checks if this HashObject is equal to another HashObject by comparing their keys.
-     * @param obj The HashObject to compare to
+     * @param key The key to compare to
      * @return true if the keys are equal, false otherwise
      */
-    public boolean equals(HashObject obj) {
-        return this.key.equals(obj.getKey());
+    public boolean equals(Object key) {
+        return this.key.equals(key);
     }
 
     /**
