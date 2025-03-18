@@ -18,6 +18,6 @@ public class DoubleHashing extends Hashtable{
     public int h(Object key, int probe) {
         int primaryHash = positiveMod(key.hashCode(), capacity);
         int secondaryHash = 1 + positiveMod(key.hashCode(), capacity - 2);
-        return primaryHash + probe * secondaryHash;
+        return positiveMod(primaryHash + probe * secondaryHash, capacity);
     }
 }

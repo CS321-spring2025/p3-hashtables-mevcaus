@@ -9,3 +9,4 @@ out*
 word-list.txt
 simple_inheritance_example/
 *.Identifier
+*.txt

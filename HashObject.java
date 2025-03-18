@@ -16,7 +16,7 @@ public class HashObject {
      */
     public HashObject(Object key) {
         this.key = key;
-        this.frequency = 0;
+        this.frequency = 1;
         this.probeCount = 0;
         this.isDeleted = false;
     }
@@ -89,6 +89,6 @@ public class HashObject {
      * @return A string
      */
     public String toString() {
-        return key + ": " + frequency + " " + probeCount;
+        return key + " " + frequency + " " + probeCount;
     }
 }

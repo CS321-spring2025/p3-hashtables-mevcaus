@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Basic HashTable implementation for HashObjects
  *
@@ -41,7 +43,7 @@ public abstract class Hashtable {
      */
     public boolean insert(Object key) {
         if ((double) size / capacity >= loadFactor) {
-            System.out.println("Hash table already at loadFactor: " + loadFactor);
+//            System.out.println("Hash table already at loadFactor: " + loadFactor);
             return false;
         }
 
@@ -92,9 +94,60 @@ public abstract class Hashtable {
         return null;
     }
 
+    /**
+     * Calculates the positive modulo of a dividend and divisor.
+     * This ensures that the result is always non-negative, which is
+     * necessary for hash table indices.
+     *
+     * @param dividend The number to divide
+     * @param divisor The number to divide by
+     * @return The positive remainder of the division
+     * @uathor cs321 instructors
+     */
     protected int positiveMod(int dividend, int divisor) {
         int quotient = dividend % divisor;
         if (quotient < 0) quotient += divisor;
         return quotient;
+    }
+
+    /**
+     * Gets the current number of elements in the hash table.
+     * This does not include duplicates.
+     *
+     * @return The number of unique elements in the hash table
+     */
+    public int getSize() {
+        return this.size;
+    }
+
+    /**
+     * Gets the number of duplicate keys encountered during insertions.
+     * A duplicate occurs when a key that already exists in the table
+     * is inserted again.
+     *
+     * @return The number of duplicate keys encountered
+     */
+    public int getNumDuplicates() {
+        return this.numDuplicates;
+    }
+
+    /**
+     * Gets the total number of probes performed during all insertions.
+     * This is used to calculate the average number of probes per insertion.
+     *
+     * @return The total number of probes performed
+     */
+    public int getNumProbes() {
+        return this.numProbes;
+    }
+
+    /**
+     * Gets the hash table array.
+     * This provides direct access to the internal array of HashObjects for printing to console/log.
+     *
+     * @return The hash table array
+     */
+    public HashObject[] getTable() {
+        return this.table;
     }
 }
