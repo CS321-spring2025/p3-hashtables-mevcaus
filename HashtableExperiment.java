@@ -125,7 +125,7 @@ public class HashtableExperiment {
      */
     private static void printStatistics(LinearProbing lt, DoubleHashing dt, int debugLevel, int tableSize, double loadFactor, String dataString) {
         DecimalFormat df = new DecimalFormat("0.00");
-        System.out.println("HashtableExperiment: Found a twin prime table capcity: " + tableSize);
+        System.out.println("HashtableExperiment: Found a twin prime table capacity: " + tableSize);
         System.out.println("HashtableExperiment: Input: " + dataString + "   Loadfactor:" + loadFactor);
         System.out.println();
 
@@ -228,8 +228,7 @@ public class HashtableExperiment {
         for (int i = 0; i < table.length; i++) {
             HashObject current = table[i];
             if (current != null) {
-                String successOrDup = current.getFrequency() > 1 ? "Duplicate" : "Sucess";
-                System.out.println("table[" + i + "]:" + current.toString() + " " + successOrDup);
+                System.out.println("table[" + i + "]:" + current.toString());
             }
         }
     }
