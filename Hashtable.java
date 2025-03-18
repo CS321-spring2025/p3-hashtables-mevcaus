@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Basic HashTable implementation for HashObjects
  *

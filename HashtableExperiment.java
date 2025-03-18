@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Mevludin Causevic
  */
-public class HashTableExperiment {
+public class HashtableExperiment {
 
     /**
      * Main method that parses command line arguments and runs the hash table experiment.
